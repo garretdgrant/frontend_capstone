@@ -1,8 +1,6 @@
 import { Grid, GridItem } from "@chakra-ui/react";
 function HomePage({
   children,
-  headerBg = "teal.500",
-  footerBg = "gray.800",
 }) {
   return (
     <Grid
