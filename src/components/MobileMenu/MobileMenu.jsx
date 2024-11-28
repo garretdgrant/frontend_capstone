@@ -1,5 +1,5 @@
 import { FaHamburger } from "react-icons/fa";
-import { IconButton } from "@chakra-ui/react";
+import { IconButton, useBreakpointValue } from "@chakra-ui/react";
 import { Button } from "../ui/button";
 import {
   DrawerActionTrigger,
@@ -14,10 +14,19 @@ import {
   DrawerTrigger,
 } from "../ui/drawer";
 import NavLinks from "../NavLinks/NavLinks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
+  // Check if the screen size is "md" or larger
+  const isLargerScreen = useBreakpointValue({ base: false, md: true });
+
+  // Close the drawer if screen size changes to "md" or larger
+  useEffect(() => {
+    if (isLargerScreen) {
+      setOpen(false);
+    }
+  }, [isLargerScreen]);
   return (
     <DrawerRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
       <DrawerBackdrop />
@@ -27,10 +36,15 @@ const MobileMenu = () => {
         </IconButton>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader padding={8} borderBottom={"1px solid #e2e8f0"} fontSize={"2xl"} fontWeight={"bold"}>
+        <DrawerHeader
+          padding={8}
+          borderBottom={"1px solid #e2e8f0"}
+          fontSize={"2xl"}
+          fontWeight={"bold"}
+        >
           <DrawerTitle>Little Lemon</DrawerTitle>
         </DrawerHeader>
-        <DrawerBody _hover={{boxShadow:"sm"}}>
+        <DrawerBody _hover={{ boxShadow: "sm" }}>
           <NavLinks inDrawer={true} />
         </DrawerBody>
         <DrawerFooter>

@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Text, Box, Image, StackSeparator } from "@chakra-ui/react";
+import { HStack, Box, Image } from "@chakra-ui/react";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import NavLinks from "../NavLinks/NavLinks";
 import imgUrl from "../../assests/Logo.png";

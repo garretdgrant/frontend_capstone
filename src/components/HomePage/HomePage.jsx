@@ -1,19 +1,18 @@
 import { Grid, GridItem } from "@chakra-ui/react";
-function HomePage({
-  children,
-}) {
+import MainContent from "../MainContent/MainContent";
+function HomePage({ children }) {
   return (
     <Grid
       templateAreas={`"main"
                         "footer"`}
       gridTemplateRows="1fr auto"
       minH="calc(100vh - 90px)"
-      gap={0}
     >
-      <GridItem area="main" p={4} bg={'blue'}>
+      <GridItem area="main" p={0} bg={"blue"}>
         {children}
+        <MainContent />
       </GridItem>
-      <GridItem area="footer" bg={'red'}>
+      <GridItem area="footer" bg={"red"}>
         Footer
       </GridItem>
     </Grid>
