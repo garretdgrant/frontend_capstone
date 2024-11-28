@@ -1,6 +1,6 @@
 import { FaHamburger } from "react-icons/fa";
-import { IconButton } from "@chakra-ui/react"
-import { Button } from "../../components/ui/button"
+import { IconButton } from "@chakra-ui/react";
+import { Button } from "../ui/button";
 import {
   DrawerActionTrigger,
   DrawerBackdrop,
@@ -12,33 +12,26 @@ import {
   DrawerRoot,
   DrawerTitle,
   DrawerTrigger,
-} from "../../components/ui/drawer"
-import { useState } from "react"
+} from "../ui/drawer";
+import NavLinks from "../NavLinks/NavLinks";
+import { useState } from "react";
 
 const MobileMenu = () => {
-  const [open, setOpen] = useState(false)
-
+  const [open, setOpen] = useState(false);
   return (
     <DrawerRoot open={open} onOpenChange={(e) => setOpen(e.open)}>
       <DrawerBackdrop />
       <DrawerTrigger asChild>
-      <IconButton
-            variant={"ghost"}
-            aria-label="Open Menu"
-            size={"2xl"}
-          >
-            <FaHamburger />
-          </IconButton>
+        <IconButton variant={"ghost"} aria-label="Open Menu" size={"2xl"}>
+          <FaHamburger />
+        </IconButton>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>Drawer Title</DrawerTitle>
+        <DrawerHeader padding={8} borderBottom={"1px solid #e2e8f0"} fontSize={"2xl"} fontWeight={"bold"}>
+          <DrawerTitle>Little Lemon</DrawerTitle>
         </DrawerHeader>
-        <DrawerBody>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+        <DrawerBody _hover={{boxShadow:"sm"}}>
+          <NavLinks inDrawer={true} />
         </DrawerBody>
         <DrawerFooter>
           <DrawerActionTrigger asChild>
@@ -49,7 +42,7 @@ const MobileMenu = () => {
         <DrawerCloseTrigger />
       </DrawerContent>
     </DrawerRoot>
-  )
-}
+  );
+};
 
-export default MobileMenu
+export default MobileMenu;
