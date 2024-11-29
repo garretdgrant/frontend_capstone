@@ -13,9 +13,9 @@ export const CallToAction = () => {
     <>
       <Stack
         direction={"column"}
-        width={"50%"}
+        width={"80%"}
         height={"80%"}
-        bg={"rgb(74, 94, 87)"}
+        bg={""}
         justifyContent={"space-between"} // Center content vertically
         alignItems={"flex-start"} // Center content horizontally
         fontFamily={"roboto"}
@@ -33,7 +33,12 @@ export const CallToAction = () => {
             Placerville, California
           </Text>
         </Box>
-        <Text minWidth={"280px"} fontSize={"xl"}>
+        <Text
+          width={"300px"}
+          minWidth={"280px"}
+          maxWidth={"350px"}
+          fontSize={"xl"}
+        >
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </Text>
