@@ -35,14 +35,14 @@ const DesktopMainRight = () => {
             display={"flex"}
           >
             <Image
-              display={{ base: "block", md: "block" }}
+              display={{ base: "none", md: "block" }}
               src={homePageFoodUrl}
               alt="Overlay Image"
               objectFit="cover"
               width={{ base: "300px", md: "300px", lg: "400px", xl: "500px" }} // Define specific size for the image
               height={"325px"}
-              position={{ base: "none", md: "absolute" }}
-              top={"37%"} // Adjust this to position the image vertically
+              position={{ base: "absolute", md: "absolute" }}
+              top={"30%"} // Adjust this to position the image vertically
               left={"75%"} // Adjust this to position the image horizontally
               transform={{ md: "translate(-50%, -50%)" }} // Center image relative to the defined area
               borderRadius={"2xl"}

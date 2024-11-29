@@ -7,9 +7,9 @@ import {
   Box,
   Stack,
 } from "@chakra-ui/react";
-import homePageFoodUrl from "../../assests/images/homepagefood.jpg";
 import { CallToAction } from "../CallToAction/CallToAction";
 import DesktopMainRight from "./DesktopMainRight/DesktopMainRight";
+import SpecialsContent from "../Specials/SpecialsContent";
 
 export default function MainContent() {
   return (
@@ -24,6 +24,7 @@ export default function MainContent() {
         <Stack
           width={{ base: "100%", md: "50%" }}
           height={{ base: "50%", md: "80%" }}
+          minHeight={"300px"}
           bg={"rgb(74, 94, 87)"}
           alignItems={"flex-end"}
         >
@@ -31,7 +32,14 @@ export default function MainContent() {
         </Stack>
         <DesktopMainRight />
       </Stack>
-      
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        height={{ base: "33vh", md: "65vh" }}
+        gap={0}
+        justifyContent={"space-around"}
+      >
+        <SpecialsContent />
+      </Stack>
     </>
   );
 }

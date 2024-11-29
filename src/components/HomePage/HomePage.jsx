@@ -3,18 +3,16 @@ import MainContent from "../MainContent/MainContent";
 function HomePage({ children }) {
   return (
     <Grid
-      templateAreas={`"main"
-                        "footer"`}
-      gridTemplateRows="1fr auto"
-      minH="calc(100vh - 90px)"
+      // templateAreas={`"main"
+      //                   "footer"`}
     >
-      <GridItem area="main" p={0} bg={"blue"}>
+      <GridItem area="main" p={0}>
         {children}
         <MainContent />
       </GridItem>
-      <GridItem area="footer" bg={"red"}>
+      {/* <GridItem area="footer" bg={"red"}>
         Footer
-      </GridItem>
+      </GridItem> */}
     </Grid>
   );
 }
